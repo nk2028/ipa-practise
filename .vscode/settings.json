@@ -1,0 +1,4 @@
+{
+  "editor.formatOnSave": true,
+  "svelte.plugin.svelte.format.config.printWidth": 160
+}
