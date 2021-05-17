@@ -1,0 +1,125 @@
+::selection {
+  background-color: #777;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #212529;
+  color: #f8f9fa;
+  display: table;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+a {
+  color: rgb(224, 36, 94);
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px solid;
+}
+
+main {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.round-button {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  border-radius: 80em;
+  border: 1px solid transparent;
+  color: #ccc;
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  height: 2.5em;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 2.5em;
+}
+
+.round-button:hover,
+.round-button:active {
+  background-color: #5c636a;
+  border-color: #565e64;
+}
+
+.round-button:focus {
+  box-shadow: 0 0 0 2px rgba(130, 138, 145, 0.5);
+}
+
+.round-button-danger {
+  background-color: rgb(149, 24, 63);
+}
+
+.round-button-danger:hover,
+.round-button-danger:active {
+  background-color: rgb(134, 22, 56);
+  border-color: rgb(122, 20, 51);
+}
+
+.round-button-danger:focus {
+  box-shadow: 0 0 0 2px rgba(122, 20, 51, 0.5);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.float-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 1em;
+}
+
+.float-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 1em;
+  text-align: center;
+}
+
+.float-left p,
+.float-right p {
+  margin: 0.5em 0;
+}
+
+/* swal2 content */
+
+.swal-content-wrapper {
+  line-height: 1.4;
+  padding: 2em 6em;
+  text-align: left;
+}
+
+@media only screen and (max-width: 720px) {
+  .swal-content-wrapper {
+    padding: 4em 0;
+  }
+}
+
+/* Override swal2 CSS */
+
+.swal2-popup {
+  width: 48em !important;
+}
+
+body.swal2-shown.swal2-height-auto {
+  height: 100% !important;
+}
