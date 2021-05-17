@@ -2,12 +2,25 @@
   background-color: #777;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 body {
   background-color: #212529;
   color: #f8f9fa;
-  margin: 0;
+  display: table;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+main {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .round-button {
@@ -30,6 +43,20 @@ body {
   width: 2.5em;
 }
 
+.round-button:hover {
+  background-color: #5c636a;
+  border-color: #565e64;
+}
+
+.round-button:active {
+  background-color: #565e64;
+  border-color: #51585e;
+}
+
+.round-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5);
+}
+
 .float-left {
   position: absolute;
   left: 0;
@@ -42,6 +69,7 @@ body {
   right: 0;
   top: 0;
   margin: 1em;
+  text-align: center;
 }
 
 .float-left p,
