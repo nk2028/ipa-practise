@@ -6,6 +6,7 @@
 
   import VowelChart from "./VowelChart.svelte";
   import { getRandomVowelAndPerson } from "./randomVowel";
+  import { sleep } from "./utils";
   import { playVowel } from "./vowelUtils";
   import swalHTML from "./swalHTML";
 
@@ -41,13 +42,16 @@
       lastAnsStatus = "correct";
       practiced += 1;
       await playVowel(selectedIPA, person);
+      await sleep(500);
       await playVowel(vowel, person);
+      await sleep(500);
       lastAnsStatus = "none";
       await nextVowel();
     } else {
       lastAnsStatus = "wrong";
       wrongCount += 1;
       await playVowel(selectedIPA, person);
+      await sleep(500);
       lastAnsStatus = "none";
       await playVowel(vowel, person);
     }

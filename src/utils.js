@@ -12,3 +12,7 @@ export function playSound(url) {
     audio.src = url;
   });
 }
+
+export function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
