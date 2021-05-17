@@ -5,6 +5,6 @@ export default `<div class="swal-content-wrapper">
     <br />
     Source code: <a href="https://github.com/ayaka14732/ipa-practice">ayaka14732/ipa-practice</a>
     <br />
-    IPA pronunciations are taken from <a href="https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html">IPA i-charts (2021)</a>
+    IPA pronunciations are taken from the official web page of the International Phonetic Association: <a href="https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html">IPA i-charts (2021)</a>.
   </p>
 </div>`;

@@ -70,9 +70,9 @@
 </main>
 
 <div class="float-left">
-  <p>Type: Vowel</p>
-  <p>{"Practiced: " + practiced}</p>
-  <p>{"Wrong: " + wrongCount}</p>
+  <p><b>Type: </b>Vowel</p>
+  <p><b>Practiced: </b>{practiced}</p>
+  <p><b>Wrong: </b>{wrongCount}</p>
 </div>
 
 <div class="float-right">
@@ -87,8 +87,8 @@
   <p>
     <input
       type="button"
-      class="round-button bold"
-      value="⭮"
+      class="round-button"
+      value="▶"
       on:click={replayVowel}
     />
   </p>
