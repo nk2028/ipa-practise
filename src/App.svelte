@@ -1,33 +1,65 @@
 <script>
-  export let name;
+  import VowelChart from "./VowelChart.svelte";
+  import { getRandomVowelAndPerson } from "./randomVowel";
+  import { playVowel } from "./vowelUtils";
+
+  let practiced = 0;
+  let wrongCount = 0;
+  let lastAnsStatus = null;
+
+  let vowelAndPerson = getRandomVowelAndPerson();
+
+  function nextVowel() {
+    vowelAndPerson = getRandomVowelAndPerson();
+    const { vowel, person } = vowelAndPerson;
+    return playVowel(vowel, person);
+  }
+
+  async function handleVowelSelect(e) {
+    const selectedIPA = e.target.getAttribute("data-ipa");
+    const { vowel, person } = vowelAndPerson;
+    if (selectedIPA === vowel) {
+      lastAnsStatus = "correct";
+      practiced += 1;
+      await playVowel(selectedIPA, person);
+      await playVowel(vowel, person);
+      lastAnsStatus = null;
+      await nextVowel();
+    } else {
+      wrongCount += 1;
+      lastAnsStatus = "wrong";
+      console.log(vowel);
+      await playVowel(selectedIPA, person);
+      await playVowel(vowel, person);
+      lastAnsStatus = null;
+    }
+  }
 </script>
 
-<main>
-  <h1>Hello {name}!</h1>
-  <p>
-    Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
-    how to build Svelte apps.
-  </p>
+<main class={lastAnsStatus}>
+  <h1>IPA Online Practice System</h1>
+  <VowelChart {handleVowelSelect} />
 </main>
+
+<div class="float-left">
+  <p>Type: Vowel</p>
+  <p>Practiced: {practiced}</p>
+  <p>Wrong: {wrongCount}</p>
+</div>
+
+<div class="float-right">
+  <p><input type="button" class="round-button" value="ℹ" /></p>
+  <p><input type="button" class="round-button" value="❔" /></p>
+</div>
 
 <style>
   main {
     text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
   }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
+  main.correct {
+    outline: 1px solid green;
   }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
+  main.wrong {
+    outline: 1px solid red;
   }
 </style>
