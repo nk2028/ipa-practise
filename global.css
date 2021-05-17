@@ -76,10 +76,6 @@ main {
   box-shadow: 0 0 0 2px rgba(122, 20, 51, 0.5);
 }
 
-.bold {
-  font-weight: bold;
-}
-
 .float-left {
   position: absolute;
   left: 0;
