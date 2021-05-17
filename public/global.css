@@ -100,6 +100,8 @@ main {
   margin: 0.5em 0;
 }
 
+/* swal2 content */
+
 .swal-content-wrapper {
   line-height: 1.4;
   padding: 2em 6em;

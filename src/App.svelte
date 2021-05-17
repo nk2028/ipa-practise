@@ -7,6 +7,7 @@
   import VowelChart from "./VowelChart.svelte";
   import { getRandomVowelAndPerson } from "./randomVowel";
   import { playVowel } from "./vowelUtils";
+  import swalHTML from "./swalHTML";
 
   let practiced = 0;
   let wrongCount = 0;
@@ -44,9 +45,8 @@
       lastAnsStatus = "none";
       await nextVowel();
     } else {
-      wrongCount += 1;
       lastAnsStatus = "wrong";
-      console.log(vowel);
+      wrongCount += 1;
       await playVowel(selectedIPA, person);
       lastAnsStatus = "none";
       await playVowel(vowel, person);
@@ -55,16 +55,7 @@
 
   function showInfoBox() {
     Swal.fire({
-      html: `<div class="swal-content-wrapper">
-  <h3>IPA Online Practice System</h3>
-  <p>
-    Author: Ayaka Mikazuki (<a href="https://github.com/ayaka14732">@ayaka14732</a>)
-    <br />
-    Source code: <a href="https://github.com/ayaka14732/ipa-practice">ayaka14732/ipa-practice</a>
-    <br />
-    IPA pronunciations are taken from <a href="https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html">IPA i-charts (2021)</a>
-  </p>
-</div>`,
+      html: swalHTML,
       showConfirmButton: false,
     });
   }
@@ -116,13 +107,13 @@
   }
 
   main.correct {
-    background-color: rgba(0, 255, 0, 0.2);
+    background-color: rgba(0, 255, 0, 0.15);
     border-top: 2px solid rgba(0, 255, 0, 0.5);
     border-bottom: 2px solid rgba(0, 255, 0, 0.5);
   }
 
   main.wrong {
-    background-color: rgba(255, 0, 0, 0.2);
+    background-color: rgba(255, 0, 0, 0.15);
     border-top: 2px solid rgba(255, 0, 0, 0.5);
     border-bottom: 2px solid rgba(255, 0, 0, 0.5);
   }
