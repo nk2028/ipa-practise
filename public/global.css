@@ -18,6 +18,15 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
+a {
+  color: rgb(224, 36, 94);
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px solid;
+}
+
 main {
   display: table-cell;
   vertical-align: middle;
@@ -28,7 +37,7 @@ main {
   border-color: #6c757d;
   border-radius: 80em;
   border: 1px solid transparent;
-  color: #fff;
+  color: #ccc;
   display: block;
   font-size: 1rem;
   font-weight: 400;
@@ -43,18 +52,32 @@ main {
   width: 2.5em;
 }
 
-.round-button:hover {
+.round-button:hover,
+.round-button:active {
   background-color: #5c636a;
   border-color: #565e64;
 }
 
-.round-button:active {
-  background-color: #565e64;
-  border-color: #51585e;
+.round-button:focus {
+  box-shadow: 0 0 0 2px rgba(130, 138, 145, 0.5);
 }
 
-.round-button:focus {
-  box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5);
+.round-button-danger {
+  background-color: rgb(149, 24, 63);
+}
+
+.round-button-danger:hover,
+.round-button-danger:active {
+  background-color: rgb(134, 22, 56);
+  border-color: rgb(122, 20, 51);
+}
+
+.round-button-danger:focus {
+  box-shadow: 0 0 0 2px rgba(122, 20, 51, 0.5);
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .float-left {
@@ -75,4 +98,26 @@ main {
 .float-left p,
 .float-right p {
   margin: 0.5em 0;
+}
+
+.swal-content-wrapper {
+  line-height: 1.4;
+  padding: 2em 6em;
+  text-align: left;
+}
+
+@media only screen and (max-width: 720px) {
+  .swal-content-wrapper {
+    padding: 4em 0;
+  }
+}
+
+/* Override swal2 CSS */
+
+.swal2-popup {
+  width: 48em !important;
+}
+
+body.swal2-shown.swal2-height-auto {
+  height: 100% !important;
 }
